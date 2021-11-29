@@ -1,0 +1,240 @@
+.features {
+  padding: 110px 0 55px;
+  position: relative;
+  z-index: 3;
+
+  @media (max-width: $tablet-width) {
+    padding: 54px 0 27px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 37px 0 30px;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: url("../img/triangle-big.svg");
+    z-index: -1;
+  }
+
+  &::before {
+    right: calc((100vw + 770px)/2);
+    top: 56%;
+
+    @media (max-width: $tablet-width) {
+      display: none;
+    }
+  }
+
+  &::after {
+    transform: rotate(180deg);
+    right: calc((100vw - 940px)/2);
+    top: 17.5%;
+
+    @media (max-width: $tablet-width) {
+      right: -312px;
+      top: 81px;
+    }
+
+    @media (max-width: $mobile-width) {
+      top: 643px;
+      right: -431px;
+    }
+  }
+}
+
+.features__list {
+  @include reset-list;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  position: relative;
+
+  @media (max-width: $tablet-width) {
+    grid-template-rows: max-content;
+  }
+
+  @media (max-width: $mobile-width) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: url("../img/triangle-small.svg");
+    z-index: -1;
+
+    @media (max-width: $tablet-width) {
+      display: none;
+    }
+  }
+
+  &::before {
+    top: -64px;
+    left: -178px;
+  }
+
+  &::after {
+    transform: rotate(180deg);
+    right: -348px;
+    top: 346px;
+  }
+}
+
+.features__item {
+  min-width: 290px;
+  max-width: 570px;
+  width: 100%;
+  min-height: 299px;
+  background-color: $white;
+
+  border: 1px solid $border-color;
+  border-left: 3px solid $main-cyan;
+  padding: 40px 43px 49px 42px;
+  cursor: pointer;
+
+  @media (max-width: $tablet-width) {
+    min-height: 232px;
+    padding: 24px 24px 20px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-bottom: 24px;
+  }
+
+  h3 {
+    @include font($robotocondensed, 24px, 34px, 400, normal);
+    color: $main-cyan;
+    margin: 0;
+    margin-bottom: 15px;
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: $mobile-width) {
+      @include resize-txt(20px, 28px);
+    }
+  }
+
+  p {
+    @include font($ptmono, 16px, 22px, 400, normal);
+    color: $color-text;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+
+  svg {
+    margin-bottom: 17px;
+  }
+
+  &--term {
+    svg {
+      @media (max-width: $tablet-width) {
+        margin-bottom: 2px;
+      }
+
+      @media (max-width: $mobile-width) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  &--suppliers {
+    svg {
+      @media (max-width: $tablet-width) {
+        margin-bottom: 4px;
+        width: 32px;
+        height: 32px;
+      }
+
+      @media (max-width: $mobile-width) {
+        margin-bottom: 7px;
+      }
+    }
+
+    h3 {
+      @media (max-width: $tablet-width) {
+        margin-bottom: 11px;
+      }
+
+      @media (max-width: $mobile-width) {
+        margin-bottom: 9px;
+      }
+    }
+
+    @media (max-width: $mobile-width) {
+      padding-right: 14px;
+    }
+  }
+
+  &--privacy {
+
+    @media (max-width: $tablet-width) {
+      padding-right: 18px;
+    }
+
+    @media (max-width: $mobile-width) {
+      padding-right: 14px;
+    }
+
+    svg {
+      margin-bottom: 20px;
+
+      @media (max-width: $tablet-width) {
+        margin-bottom: 6px;
+        width: 30px;
+        height: 26px;
+      }
+
+      @media (max-width: $mobile-width) {
+        margin-bottom: 10px;
+      }
+    }
+
+    h3 {
+      @media (max-width: $tablet-width) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &--price {
+    svg {
+      @media (max-width: $tablet-width) {
+        margin-bottom: 3px;
+        width: 32px;
+        height: 32px;
+      }
+
+      @media (max-width: $mobile-width) {
+        margin-bottom: 10px;
+      }
+    }
+
+    p {
+      @media (max-width: $mobile-width) {
+        padding-top: 7px;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    transition: $trans--300;
+    background-color: $main-cyan;
+
+    h3,
+    p {
+      color: $white;
+    }
+
+    svg {
+      --hover: #ffffff;
+    }
+  }
+}
+

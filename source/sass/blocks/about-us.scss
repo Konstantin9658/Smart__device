@@ -1,0 +1,116 @@
+.about-us {
+  padding: 55px 0 96px;
+  position: relative;
+  z-index: 3;
+
+  @media (max-width: $tablet-width) {
+    padding: 27px 0 83px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 23px 2px 65px;
+  }
+}
+
+.about-us__wrapper {
+  display: flex;
+}
+
+.about-us__content {
+  h2 {
+    @include font($robotocondensed, 36px, 51px, 400, normal);
+    color: $color-text;
+    margin: 0;
+    margin-bottom: 18px;
+
+    @media (max-width: $tablet-width) {
+      @include resize-txt(32px, 45px);
+      margin-bottom: 25px;
+    }
+
+    @media (max-width: $mobile-width) {
+      @include resize-txt(28px, 40px);
+      margin-bottom: 21px;
+    }
+  }
+}
+
+.about-us__description {
+  @include font($ptmono, 16px, 22px, 400, normal);
+  color: $color-text;
+  margin: 0;
+  padding-bottom: 20px;
+  letter-spacing: -0.3px;
+
+  @media (max-width: $tablet-width) {
+    span {
+      display: none;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    letter-spacing: -0.5px;
+
+    &--big-padding {
+      padding-bottom: 40px;
+    }
+  }
+}
+
+.about-us__img {
+  width: 180px;
+
+  @media (max-width: $tablet-width) {
+    width: 185px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 0;
+  }
+
+  &::before {
+    position: relative;
+    left: -30px;
+    content: url("../img/about-us-img-desktop.png");
+
+    @media (max-width: $tablet-width) {
+      content: url("../img/about-us-img-tab.png");
+      left: -25px;
+      top: -2px;
+    }
+
+    @media (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+}
+
+.about-us__link {
+  @include flex-center;
+  letter-spacing: 0.05em;
+  @include font($robotocondensed, 14px, 16px, 700, normal);
+  text-transform: uppercase;
+  width: 180px;
+  min-height: 45px;
+  border: 1px solid $main-cyan;
+  border-radius: $btn-radius;
+  margin-top: 19px;
+  color: $main-cyan;
+
+  &:hover,
+  &:focus-visible {
+    transition: $trans--300;
+    background-color: $main-cyan;
+    color: $white;
+  }
+
+  @media (max-width: $tablet-width) {
+    margin-top: 21px;
+    margin-left: 3px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-top: 8px;
+    margin-left: 0;
+  }
+}

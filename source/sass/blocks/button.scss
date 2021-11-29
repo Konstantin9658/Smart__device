@@ -1,0 +1,76 @@
+.button {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  color: $white;
+  border-radius: $btn-radius;
+  min-height: 45px;
+  width: 100%;
+  cursor: pointer;
+  padding: 0;
+  letter-spacing: 0.05em;
+  @include font($robotocondensed, 14px, 16px, 700, normal);
+  text-transform: uppercase;
+
+  &--callback {
+    width: 180px;
+    min-height: 45px;
+    border: 1px solid $white;
+    margin: auto;
+
+    @media (max-width: $tablet-width) {
+      display: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $main-cyan;
+      border-color: $main-cyan;
+    }
+  }
+
+  &--consultation {
+    @include resize-txt(14px, 19px);
+    width: 407px;
+    min-height: 55px;
+    border-radius: $btn-radius;
+    background-color: $main-cyan;
+    color: $white;
+    margin-left: 98px;
+    margin-top: 26px;
+    margin-bottom: 40px;
+    letter-spacing: 0.13em;
+
+    @media (max-width: $tablet-width) {
+      width: 379px;
+      margin-left: 51px;
+      margin-top: 36px;
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 100%;
+      margin-top: 22px;
+      margin-left: 0;
+    }
+
+    &::before {
+      content: "Получить бесплатную консультацию";
+
+      @media (max-width: $mobile-width) {
+        content: "Бесплатная консультация";
+      }
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: transparent;
+      border: 1px solid $main-cyan;
+      color: $main-cyan;
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    transition: $trans--300;
+  }
+}

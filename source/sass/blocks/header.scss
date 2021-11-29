@@ -1,0 +1,299 @@
+.header {
+  flex: 0 0 auto;
+  position: relative;
+  background: url("../img/header-bcg.png"), $bcg-gradient;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  min-height: 878px;
+  z-index: 3;
+  overflow: hidden;
+
+  @media (max-width: $tablet-width) {
+    min-height: 686px;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-height: 647px;
+  }
+
+  &::before {
+    content: url("../img/header-triangle.svg");
+    position: absolute;
+    right: calc((100vw - 1482px)/2);
+    top: 118px;
+    z-index: -1;
+
+    @media (max-width: $tablet-width) {
+      content: url("../img/header-triangle-m.svg");
+      right: -169px;
+      top: 81px;
+    }
+
+    @media (max-width: $mobile-width) {
+      content: url("../img/header-triangle-s.svg");
+      top: 1px;
+      left: 164px;
+    }
+  }
+}
+
+.header__container {
+  width: 100%;
+  max-width: 1570px;
+  margin: 0 auto;
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    padding: 0 25px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 0 15px;
+  }
+}
+
+.header__nav {
+  width: 1411px;
+  margin: 0 auto;
+  min-height: 52px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 33px;
+
+  @media (min-width: $desktop-width) and (max-width: 1366px) {
+    width: 900px;
+  }
+
+  @media (min-width: 1440px) and (max-width: 1600px) {
+    width: 1280px;
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-height: 38px;
+  }
+}
+
+.header__logo {
+  display: flex;
+  flex: 1 0 auto;
+
+  svg {
+    @media (max-width: $mobile-width) {
+      width: 38px;
+      height: 38px;
+    }
+  }
+}
+
+.header__slogan {
+  @include font($robotocondensed, 25px, 29px, 700, normal);
+  color: $white;
+  margin: 0;
+  padding-left: 16px;
+  align-self: flex-end;
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+
+  span {
+    @include font($roboto, 12px, 14px, 500, normal);
+    display: block;
+  }
+}
+
+.header__contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: 38px;
+
+  li {
+    @include font($ptmono, 16px, 18px, 400, normal);
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 88px;
+
+      @media (max-width: $tablet-width) {
+        margin-right: 33px;
+      }
+
+      @media (max-width: $mobile-width) {
+        margin-right: 23px;
+      }
+    }
+
+    &:hover a,
+    &:focus-visible a {
+      transition: $trans--300;
+      color: $main-cyan;
+
+      @media (max-width: $tablet-width) {
+        --hover: #ffffff;
+      }
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    margin-right: 0;
+  }
+}
+
+.header__contact-email,
+.header__contact-phone {
+  color: $white;
+}
+
+.header__contact-email {
+  svg {
+    @media (max-width: $tablet-width) {
+      width: 25px;
+      height: 19px;
+    }
+  }
+
+  &::after {
+    content: "info@sd.ru";
+  }
+}
+
+.header__contact-phone {
+  svg {
+    @media (max-width: $tablet-width) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &::after {
+    content: "+7 (495) 000 52 52";
+  }
+}
+
+.header__contact-phone::after,
+.header__contact-email::after {
+  @media (max-width: $tablet-width) {
+    content: "";
+  }
+}
+
+
+.header__content {
+  padding-left: 74px;
+  margin-top: 172px;
+  display: flex;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 116px;
+    padding: 0 120px 0 63px;
+    z-index: 2;
+    position: relative;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 0;
+    margin-top: 231px;
+  }
+}
+
+.header__content-text {
+  margin-top: 57px;
+  width: 50%;
+  flex-grow: 1;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 0;
+    z-index: 2;
+    position: relative;
+  }
+
+  h1 {
+    @include font($robotocondensed, 80px, 94px, 700, normal);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: $white;
+    margin: 0;
+    padding-bottom: 26px;
+
+    @media (max-width: $tablet-width) {
+      @include resize-txt(60px, 70px);
+      padding-bottom: 30px;
+    }
+
+    @media (max-width: $mobile-width) {
+      @include resize-txt(40px, 47px);
+      padding-bottom: 24px;
+    }
+  }
+
+  p {
+    @include font($ptmono, 22px, 34px, 400, normal);
+    color: $white;
+    margin: 0;
+    padding: 0 20px 20px 98px;;
+    position: relative;
+    letter-spacing: 0.2px;
+
+    @media (max-width: $tablet-width) {
+      @include resize-txt(18px, 28px);
+      padding-left: 51px;
+      letter-spacing: -0.2px;
+    }
+
+    @media (max-width: $mobile-width) {
+      @include resize-txt(16px, 25px);
+      padding-right: 13px;
+      letter-spacing: -0.4px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 66px;
+      height: 2px;
+      background-color: $white;
+      left: 0;
+      top: 17px;
+
+      @media (max-width: $tablet-width) {
+        width: 33px;
+        left: 3px;
+      }
+    }
+  }
+
+}
+
+.header__content-img {
+  background-image: url("../img/card-img.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 705px;
+  height: 515px;
+
+  @media (max-width: $tablet-width) {
+    width: 465px;
+    height: 340px;
+    position: absolute;
+    z-index: -1;
+    top: -73px;
+    right: -230px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 301px;
+    height: 220px;
+    left: 11px;
+    top: -195px;
+  }
+}

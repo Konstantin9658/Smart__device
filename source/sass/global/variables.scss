@@ -1,0 +1,38 @@
+// Color
+
+$white: #ffffff;
+$black: #000000;
+$main-cyan: #00b2ff;
+$very-dark-blue: #1b2d37;
+$border-color: #ebebeb;
+$color-text: #666666;
+
+// Gradient
+
+$bcg-gradient: linear-gradient(90deg,$very-dark-blue 0%, $very-dark-blue 80%);
+
+// Radius
+
+$btn-radius: 5px;
+
+// Viewports
+
+$min-width: 320px;
+$mobile-width: 767px;
+$tablet-width: 1023px;
+$desktop-width: 1024px;
+
+//fonts
+
+$roboto: "Roboto", "Arial", sans-serif;
+$ptmono: "PT Mono", "Courier New", monospace;
+$robotocondensed: "Roboto Condensed", "Arial", sans-serif;
+
+//transition
+
+$trans--300:  0.3s ease-in-out;
+
+//retina
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
