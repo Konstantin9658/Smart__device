@@ -96,7 +96,7 @@
   color: $white;
   margin: 0;
   padding-left: 16px;
-  align-self: flex-end;
+  align-self: center;
 
   @media (max-width: $mobile-width) {
     display: none;
@@ -115,7 +115,11 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-right: 38px;
+  margin-right: 46px;
+
+  @media (max-width: $tablet-width) {
+    margin-right: 0;
+  }
 
   li {
     @include font($ptmono, 16px, 18px, 400, normal);
@@ -143,18 +147,20 @@
       }
     }
   }
-
-  @media (max-width: $tablet-width) {
-    margin-right: 0;
-  }
 }
 
 .header__contact-email,
 .header__contact-phone {
   color: $white;
+
+  svg {
+    display: inline-block;
+    vertical-align: top;
+  }
 }
 
 .header__contact-email {
+
   svg {
     @media (max-width: $tablet-width) {
       width: 25px;
@@ -164,10 +170,14 @@
 
   &::after {
     content: "info@sd.ru";
+    display: inline-block;
+    vertical-align: super;
+    padding-left: 6px;
   }
 }
 
 .header__contact-phone {
+
   svg {
     @media (max-width: $tablet-width) {
       width: 24px;
@@ -177,6 +187,9 @@
 
   &::after {
     content: "+7 (495) 000 52 52";
+    display: inline-block;
+    vertical-align: super;
+    padding-left: 5px;
   }
 }
 
@@ -271,7 +284,6 @@
       }
     }
   }
-
 }
 
 .header__content-img {

@@ -12,9 +12,11 @@
     <div class="header__container">
       <nav class="header__nav">
         <div class="header__logo">
-          <svg width="52" height="52" role="img" aria-label="Логотип компании">
-            <use xlink:href="img/sprite.svg#icon-logo"></use>
-          </svg>
+          <a href="#!">
+            <svg width="52" height="52" role="img" aria-label="Логотип компании">
+              <use xlink:href="img/sprite.svg#icon-logo"></use>
+            </svg>
+          </a>
           <p class="header__slogan">Smart Device<br><span>умные технологии</span></p>
         </div>
         <ul class="header__contact-list">
@@ -119,6 +121,42 @@
         </div>
       </div>
     </section>
+    <section class="services">
+      <div class="container">
+        <h2>Service Device предлагает следующие товары и услуги</h2>
+        <div class="services__wrapper">
+          <a class="services__card-link services__card-link--production" href="#!">
+            <p>Производство<br> печатных плат</p>
+            <button class="button services__btn" type="button" aria-label="Перейти в раздел производство"></button>
+          </a>
+          <a class="services__card-link services__card-link--installation" href="#!">
+            <p>Монтаж печатных<br> плат</p>
+            <button class="button services__btn" type="button" aria-label="Перейти в раздел монтаж"></button>
+          </a>
+          <a class="services__card-link services__card-link--equip" href="#!">
+            <p>Комплектующие<br> для светотехники</p>
+            <button class="button services__btn" type="button" aria-label="Перейти в раздел комплектующих"></button>
+          </a>
+        </div>
+      </div>
+    </section>
+    <article class="feedback" id="form">
+      <div class="container">
+        <form class="feedback__form" action="https://echo.htmlacademy.ru/" method="post">
+          <h2>Остались вопросы? Задайте их нам!</h2>
+          <p>Мы проконсультируем Вас бесплатно</p>
+          <div class="feedback__form-fields">
+            <label class="visually-hidden" for="name-field">Имя</label>
+            <input id="name-field" name="Имя" type="text" placeholder="Имя" required="">
+            <label class="visually-hidden" for="tel-field">Телефон</label>
+            <input id="tel-field" name="Телефон" type="number" placeholder="Телефон" required="">
+          </div>
+          <button class="button button--form" type="submit">Задать вопрос</button>
+          <input type="checkbox" id="agree-id" required="" checked="">
+          <label for="agree-id">Я согласен на обработку  персональных данных</label>
+        </form>
+      </div>
+    </article>
   </main>
   <footer class="footer"></footer>
 </body>

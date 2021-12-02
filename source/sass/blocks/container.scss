@@ -2,13 +2,14 @@
   width: 1170px;
   margin: 0 auto;
 
-  @media (max-width: $tablet-width) {
+  @media (min-width: 768px) and (max-width: 1200px) {
     width: 100%;
     padding: 0 25px;
     margin: 0;
   }
 
   @media (max-width: $mobile-width) {
+    width: 100%;
     padding: 0 15px;
   }
 }
