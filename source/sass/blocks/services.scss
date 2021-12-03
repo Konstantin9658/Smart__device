@@ -7,6 +7,10 @@
     padding: 51px 0;
   }
 
+  @media (max-width: $mobile-width) {
+    padding-bottom: 37px;
+  }
+
   h2 {
     @include font($robotocondensed, 36px, 51px, 400, normal);
     color: $white;
@@ -21,7 +25,7 @@
 
     @media (max-width: $mobile-width) {
       @include resize-txt(28px, 39px);
-      margin-bottom: 37px;
+      margin-bottom: 41px;
       padding-left: 11px;
       padding-right: 0;
     }
@@ -77,7 +81,7 @@
     }
 
     @media (max-width: $mobile-width) {
-      padding: 23px 35px 60px;
+      padding: 21px 35px 60px;
     }
   }
 
@@ -93,7 +97,6 @@
     }
 
     @media (max-width: $tablet-width) {
-      width: 715px;
       background-image: url("../img/block-services/production-service-img-tablet.png");
 
       @include retina {
@@ -156,6 +159,7 @@
       @media (max-width: $mobile-width) {
         padding-top: 33px;
         padding-left: 36px;
+        padding-bottom: 48px;
       }
     }
     background-image: url("../img/block-services/lighting-equipment-img.png");
@@ -220,7 +224,7 @@
   top: 414px;
 
   @media (max-width: $tablet-width) {
-    left: 653px;
+    left: 657px;
     top: 61px;
   }
 
