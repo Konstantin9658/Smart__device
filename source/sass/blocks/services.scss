@@ -222,6 +222,7 @@
   position: relative;
   left: calc(100% - 63px);
   top: 414px;
+  display: block;
 
   @media (max-width: $tablet-width) {
     left: 657px;

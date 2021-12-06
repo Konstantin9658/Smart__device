@@ -1,0 +1,129 @@
+.modal {
+  margin: 0 auto;
+  display: flex;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,.15));
+  flex-direction: column;
+  width: 490px;
+  min-height: 605px;
+  background-color: #00b2ff;
+  padding: 33px 39px 36px;
+  animation: bounce .6s;
+  position: fixed;
+  top: 5%;
+  right: 0;
+  bottom: 50%;
+  left: 0;
+  z-index: 50;
+
+  p,
+  h2 {
+    margin: 0;
+    color: $white;
+  }
+
+  h2 {
+    @include font($robotocondensed ,28px, 39px, 400, normal);
+  }
+
+  p {
+    @include font($ptmono, 16px, 22px, 400, normal);
+  }
+}
+
+.modal__btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  top: 0;
+  right: 0;
+  position: absolute;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 1px;
+    background-color: $white;
+    transform: rotate(-45deg);
+    top: 25px;
+    left: 14px;
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+}
+
+.modal__form-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+
+  input,
+  textarea {
+    @include font($ptmono, 16px, 22px, 400, normal);
+    color: $white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 14px 20px 14px 16px;
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+
+  input {
+    margin-bottom: 30px;
+    min-height: 52px;
+  }
+
+  textarea {
+    resize: none;
+    min-height: 104px;
+  }
+}
+
+.modal__form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  label {
+    @include font($ptmono, 14px, 16px, 400, normal);
+    color: $white;
+    opacity: 0.8;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    position: relative;
+    padding-left: 51px;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+
+  input + label::before {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 16px;
+    border: 1px solid $white;
+    background-color: transparent;
+    left: 0;
+  }
+
+  input:checked + label::after {
+    position: absolute;
+    content: url("../img/checkbox-checked.svg");
+    width: 8px;
+    height: 5px;
+    left: 3px;
+    top: 0;
+  }
+}

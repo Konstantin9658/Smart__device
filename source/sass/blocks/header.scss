@@ -61,13 +61,11 @@
   flex-wrap: wrap;
   margin-top: 33px;
 
-  @media (min-width: $desktop-width) and (max-width: 1366px) {
-    width: 900px;
+  @media (min-width: $desktop-width) and (max-width: 1440px) {
+    width: 100%;
+    padding: 0 25px;
   }
 
-  @media (min-width: 1440px) and (max-width: 1600px) {
-    width: 1280px;
-  }
 
   @media (max-width: $tablet-width) {
     width: 100%;
@@ -156,6 +154,10 @@
   svg {
     display: inline-block;
     vertical-align: top;
+
+    @media (max-width: $mobile-width) {
+      vertical-align: super;
+    }
   }
 }
 
@@ -196,7 +198,7 @@
 .header__contact-phone::after,
 .header__contact-email::after {
   @media (max-width: $tablet-width) {
-    content: "";
+    content: none;
   }
 }
 
@@ -215,7 +217,7 @@
 
   @media (max-width: $mobile-width) {
     padding: 0;
-    margin-top: 231px;
+    margin-top: 226px;
   }
 }
 
@@ -283,6 +285,53 @@
         left: 3px;
       }
     }
+  }
+}
+
+.header__consultation-link {
+  color: $white;
+  border-radius: $btn-radius;
+  width: 407px;
+  min-height: 55px;
+  cursor: pointer;
+  padding: 0;
+  letter-spacing: 0.05em;
+  @include font($robotocondensed, 14px, 19px, 700, normal);
+  @include flex-center;
+  text-transform: uppercase;
+  background-color: $main-cyan;
+
+  margin-left: 98px;
+  margin-top: 21px;
+  margin-bottom: 40px;
+  letter-spacing: 0.13em;
+
+  @media (max-width: $tablet-width) {
+    width: 379px;
+    margin-left: 51px;
+    margin-top: 36px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    margin-top: 22px;
+    margin-left: 0;
+  }
+
+  &::before {
+    content: "Получить бесплатную консультацию";
+
+    @media (max-width: $mobile-width) {
+      content: "Бесплатная консультация";
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    transition: $trans--300;
+    background-color: transparent;
+    border: 1px solid $main-cyan;
+    color: $main-cyan;
   }
 }
 

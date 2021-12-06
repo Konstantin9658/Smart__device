@@ -114,6 +114,19 @@
     }
   }
 
+  &--modal {
+    border: 1px solid $white;
+    margin-top: 30px;
+    margin-bottom: 34px;
+    min-height: 47px;
+
+    &:hover,
+    &:focus-visible {
+      border-color: $very-dark-blue;
+      color: $very-dark-blue;
+    }
+  }
+
   &:hover,
   &:focus-visible {
     transition: $trans--300;
