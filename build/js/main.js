@@ -12,7 +12,6 @@
 
   const showMessage = (form) => {
     document.body.insertAdjacentElement('beforeend', form);
-    document.body.style.overflow = 'hidden';
     const modal = document.querySelector('.modal');
     const btnCloseModal = modal.querySelector('.modal__btn');
     btnCloseModal.addEventListener('click', () => closePopup(form));
@@ -31,41 +30,28 @@
   // FOOTER MENU
   const footerNavigation = document.querySelector('.footer__site-nav');
   const buttonsOpenMenu = footerNavigation.querySelectorAll('.footer__btn');
-  const navigationsLists =  footerNavigation.querySelectorAll('.footer__list-show');
+  const accordions = footerNavigation.querySelectorAll('.footer__accordion');
 
-  navigationsLists.forEach((list) => {
-    if(list.classList.contains('footer__list-show')) {
-      list.classList.remove('footer__list-show');
+  accordions.forEach(list => list.classList.remove('footer__accordion--no-js'));
+  buttonsOpenMenu.forEach(btn => btn.classList.remove('footer__btn--no-js'));
+
+  for (let i = 0; i < buttonsOpenMenu.length; i++) {
+    buttonsOpenMenu[i].addEventListener('click', toggleItem, false)
+  }
+
+  function toggleItem() {debugger
+    const item = this.parentElement;
+
+    accordions.forEach(item => item.classList.remove('footer__accordion-open'))
+
+    // accordions.forEach(item => item.classList.add('footer__accordion-close'))
+
+    if (item.classList.contains('footer__accordion-close')) {
+      item.classList.remove('footer__accordion-close');
+      item.classList.add('footer__accordion-open');
+    } else {
+      item.classList.add('footer__accordion-close');
     }
-  })
-
-  buttonsOpenMenu.forEach(btn => btn.classList.remove('footer__btn--no-js'))
-
-  const hideList = (list, btn) => {
-    list.classList.remove('footer__list-show');
-    btn.classList.add('footer__btn--open');
-    btn.classList.remove('footer__btn--close');
-  }
-
-  const showList = (list, btn) => {
-    list.classList.add('footer__list-show');
-    btn.classList.remove('footer__btn--open');
-    btn.classList.add('footer__btn--close');
-  }
-
-  for (let btn of buttonsOpenMenu) {
-    btn.addEventListener('click', (evt) => {
-      const element = evt.target;
-      const list = element.parentElement.querySelector('ul');
-
-      navigationsLists.forEach(item => item.classList.remove('footer__list-show'));
-
-      if (element.classList.contains('footer__btn--open')) {
-        showList(list, element);
-      } else {
-        hideList(list, element);
-      }
-    })
   }
 })();
 

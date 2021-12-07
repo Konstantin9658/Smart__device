@@ -149,7 +149,7 @@
             <label class="visually-hidden" for="name-field">Имя</label>
             <input id="name-field" name="Имя" type="text" placeholder="Имя" required="">
             <label class="visually-hidden" for="tel-field">Телефон</label>
-            <input class="feedback__form-tel" id="tel-field" name="Телефон" type="tel" placeholder="Телефон" required="">
+            <input class="feedback__form-tel" data-inputmask="'mask': '+7 (999) 999-9999'" id="tel-field" name="Телефон" type="tel" placeholder="Телефон" required="">
             <label class="visually-hidden" for="question-field">Задайте Ваш вопрос</label>
             <textarea id="question-field" placeholder="Ваш вопрос" required=""></textarea>
           </div>
@@ -193,7 +193,7 @@
             </li>
             <li>
               <a class="footer__social-link" href="#!">
-                <span class="visually-hidden">Мы в ВКонтакте</span>
+                <span class="visually-hidden">Мы в ВКонтакте!</span>
                 <svg width="27" height="27" role="img" aria-label="Логотип ВКонтакте">
                   <use xlink:href="img/sprite.svg#icon-vk"></use>
                 </svg>
@@ -203,10 +203,10 @@
         </div>
       </div>
       <div class="footer__site-nav">
-        <section class="footer__site-sections">
+        <section class="footer__site-sections footer__accordion footer__accordion-close footer__accordion--no-js">
           <h2>Разделы сайта</h2>
-          <button class="footer__btn footer__btn--open footer__btn--no-js" type="button"></button>
-          <ul class="footer__site-sections-list footer__list-show">
+          <button class="footer__btn footer__btn--no-js" type="button"></button>
+          <ul class="footer__site-sections-list footer__list">
             <li><a href="#!">О компании</a></li>
             <li><a href="#!">Продукты</a></li>
             <li><a href="#!">Производство печатных плат</a></li>
@@ -216,10 +216,10 @@
             <li><a href="#!">Контакты</a></li>
           </ul>
         </section>
-        <section class="footer__contact">
+        <section class="footer__site-contact footer__accordion footer__accordion-close footer__accordion--no-js">
           <h2>Наш офис</h2>
-          <button class="footer__btn footer__btn--open footer__btn--no-js" type="button"></button>
-          <ul class="footer__contact-list footer__list-show">
+          <button class="footer__btn footer__btn--no-js" type="button"></button>
+          <ul class="footer__contact-list footer__list">
             <li><a href="#!">г. Мытищи, Олимпийский проспект, д.10</a></li>
             <li><a href="tel:+74955894050">+7 (495) 589-40-50</a></li>
             <li><a href="tel:+79250038767">+7 (925) 003-87-67</a></li>

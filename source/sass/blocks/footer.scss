@@ -40,6 +40,68 @@
   }
 }
 
+.footer__accordion-close {
+  @media (max-width: $mobile-width) {
+    .footer__btn {
+      &::after,
+      &::before {
+        position: absolute;
+        content: "";
+        width: 16px;
+        height: 2px;
+        background-color: #c4c4c4;
+        right: 2px;
+        top: 35px;
+      }
+
+      &::before {
+        transform: rotate(90deg);
+      }
+    }
+
+    .footer__list {
+      display: none;
+    }
+  }
+}
+
+.footer__accordion-open {
+  @media (max-width: $mobile-width) {
+      .footer__btn {
+      &::before {
+        position: absolute;
+        content: "";
+        width: 16px;
+        height: 2px;
+        background-color: #c4c4c4;
+        right: 2px;
+        top: 35px;
+      }
+    }
+
+    .footer__list {
+      @media (max-width: $mobile-width) {
+        display: block;
+        margin-top: 30px;
+        padding-right: 30px;
+        margin-bottom: 27px;
+      }
+    }
+  }
+}
+
+.footer__accordion--no-js {
+  @media (max-width: $mobile-width) {
+    .footer__list {
+      display: block;
+      margin-top: 30px;
+      padding-right: 30px;
+      margin-bottom: 27px;
+    }
+  }
+}
+
+
 .footer__btn {
 
   @media (min-width: 768px) {
@@ -57,23 +119,6 @@
     background-color: transparent;
     cursor: pointer;
     padding: 0;
-
-    &--open::after,
-    &--open::before,
-    &--close::after {
-      position: absolute;
-      content: "";
-      width: 16px;
-      height: 2px;
-      background-color: #c4c4c4;
-      right: 2px;
-      top: 35px;
-    }
-
-    &--open::before {
-
-      transform: rotate(90deg);
-    }
 
     &--no-js {
       display: none;
@@ -297,7 +342,7 @@
   }
 }
 
-.footer__contact {
+.footer__site-contact {
   flex-shrink: 1;
   display: flex;
   flex-direction: column;
@@ -314,7 +359,6 @@
 }
 
 .footer__contact-list {
-
   @include reset-list;
 
   @media (max-width: $mobile-width) {
@@ -322,14 +366,14 @@
   }
 }
 
-.footer__list-show {
-  @media (max-width: $mobile-width) {
-    display: block;
-    margin-top: 30px;
-    padding-right: 30px;
-    margin-bottom: 27px;
-  }
-}
+// .footer__list--no-js {
+//   @media (max-width: $mobile-width) {
+//     display: block;
+//     margin-top: 30px;
+//     padding-right: 30px;
+//     margin-bottom: 27px;
+//   }
+// }
 
 .footer__copyright {
   border-top: 1px solid rgba(98,105,98,0.2);
