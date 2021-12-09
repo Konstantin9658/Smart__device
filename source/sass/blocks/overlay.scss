@@ -1,6 +1,6 @@
 .overlay {
-  transition: $trans--300;
   position: fixed;
+  animation: bounce .6s;
   top: 0;
   left: 0;
   width: 100%;

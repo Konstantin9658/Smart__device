@@ -242,7 +242,7 @@
 
     @media (max-width: $tablet-width) {
       @include resize-txt(60px, 70px);
-      padding-bottom: 30px;
+      padding-bottom: 25px;
     }
 
     @media (max-width: $mobile-width) {
@@ -347,7 +347,7 @@
     height: 340px;
     position: absolute;
     z-index: -1;
-    top: -73px;
+    top: -78px;
     right: -230px;
   }
 

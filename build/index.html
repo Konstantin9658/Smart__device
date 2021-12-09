@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="prefetch" href="fonts/ptmono-regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="prefetch" href="fonts/robotocondensed-bold.woff2" as="font" crossorigin="anonymous">
+  <link rel="prefetch" href="fonts/robotocondensed-regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="prefetch" href="fonts/roboto-medium.woff2" as="font" crossorigin="anonymous">
+  <link rel="prefetch" href="fonts/ptmono-regular.woff" as="font" crossorigin="anonymous">
+  <link rel="prefetch" href="fonts/robotocondensed-bold.woff" as="font" crossorigin="anonymous">
+  <link rel="prefetch" href="fonts/robotocondensed-regular.woff" as="font" crossorigin="anonymous">
+  <link rel="prefetch" href="fonts/roboto-medium.woff" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
   <title>Smart Device. Умные технологии</title>
 </head>
@@ -237,6 +245,7 @@
       </div>
     </div>
   </footer>
+  <div class="overlay overlay--hidden"></div>
   <template id="popup">
     <section class="modal">
       <form class="modal__form" action="https://echo.htmlacademy.ru/" method="post">
@@ -244,7 +253,7 @@
         <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
         <div class="modal__form-fields">
           <label class="visually-hidden" for="name-id">Имя</label>
-          <input id="name-id" name="modal-first-name" type="text" placeholder="Имя" required="" autocomplete="off">
+          <input id="modal-name-id" name="modal-name" type="text" placeholder="Имя" required="" autocomplete="off">
           <label class="visually-hidden" for="tel-field">Телефон</label>
           <input id="phone-modal-id" name="modal-phone" type="tel" placeholder="Телефон" required="" autocomplete="off">
           <label class="visually-hidden" for="question-id">Задайте Ваш вопрос</label>
@@ -261,6 +270,5 @@
   </template>
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
-  <div class="overlay overlay--hidden"></div>
 </body>
 </html>

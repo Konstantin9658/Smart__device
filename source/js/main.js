@@ -1,98 +1,93 @@
 'use strict';
 (function () {
 
-  var validatePhone = function (element) {
-    var imPhone = new Inputmask('+7 (999) 999-99-99');
-    imPhone.mask(element);
-  };
-
   // POPUP
 
   const formTemplate = document.querySelector('#popup').content.querySelector('.modal');
   const btnCallback = document.querySelector('.button--callback');
+  const overlay = document.querySelector('.overlay');
 
   const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 
   const closePopup = (popup) => {
     popup.remove();
     document.body.style.overflow = '';
+    overlay.classList.add('overlay--hidden');
   }
 
-  const showMessage = (form) => {
-    const modal = document.querySelector('.modal');
-    const btnCloseModal = modal.querySelector('.modal__btn');
-    const modalInputPhone = modal.querySelector('[name="modal-phone"]');
-    const btnForm = modal.querySelector('.button--modal');
+  const showFormCallback = (formTemplate) => {
+    const btnFormClose = formTemplate.querySelector('.modal__btn');
+    const inputPhoneForm = formTemplate.querySelector('[name="modal-phone"]');
+    const btnFormSubmit = formTemplate.querySelector('.button--modal');
 
-    if (modal) {
-      let name = modal.querySelector('#modal-first-name');
-      let phone = modal.querySelector('#modal-phone-id');
-      let message = modal.querySelector('#modal-question-id');
+    document.body.insertAdjacentElement('afterend', formTemplate);
+    document.body.style.overflow = 'hidden';
+
+    overlay.classList.remove('overlay--hidden');
+
+    let name = formTemplate.querySelector('#modal-name-id');
+    let phone = formTemplate.querySelector('#modal-phone-id');
+    let message = formTemplate.querySelector('#modal-question-id');
+    name.focus();
+
+    let isStorageSupport = true;
+    let storageName = '';
+    let storagePhone = '';
+    let storageMessage = '';
+
+    try {
+      storageName = localStorage.getItem('name');
+      storagePhone = localStorage.getItem('phone');
+      storageMessage = localStorage.getItem('message');
+    } catch (err) {
+      isStorageSupport = false;
+    }
+
+    if (storageName) {
+      name.value = storageName;
+      phone.focus();
+    }
+    if (storagePhone) {
+      phone.value = storagePhone;
+      message.focus();
+    }
+    if (storageMessage) {
+      message.innerText = storageMessage;
+    } else {
       name.focus();
+    }
 
-      let isStorageSupport = true;
-      let storageName = '';
-      let storagePhone = '';
-      let storageMessage = '';
-
-      try {
-        storageName = localStorage.getItem('name');
-        storagePhone = localStorage.getItem('phone');
-        storageMessage = localStorage.getItem('message');
-      } catch (err) {
-        isStorageSupport = false;
-      }
-
-      if (isStorageSupport) {
-        if (storageName) {
-          name.value = storageName;
-        }
-        if (storagePhone) {
-          phone.value = storagePhone;
-        }
-        if (storageMessage) {
-          message.innerText = storageMessage;
-        }
-      }
-
-      function sendHandler(evt) {
-        if (!name.value) {
-          evt.preventDefault();
-          name.focus();
-        } else if (name.value && !phone.value) {
-          evt.preventDefault();
-          phone.focus();
-        } else if (name.value && phone.value && !message.value) {
-          evt.preventDefault();
-          message.focus();
-        } else {
+    btnFormSubmit.addEventListener('submit', function (evt) {
+      if (!name.value || !phone.value || !message.value) {
+         evt.preventDefault()
+      } else {
+        if (isStorageSupport) {
           localStorage.setItem('name', name.value);
           localStorage.setItem('phone', phone.value);
           localStorage.setItem('message', message.value);
         }
       }
-    }
+    });
+    btnFormClose.addEventListener('click', () => closePopup(formTemplate), {once: true});
+    overlay.addEventListener('click', () => closePopup(formTemplate), {once: true});
 
-    document.body.insertAdjacentElement('beforeend', form);
-    document.body.style.overflow = 'hidden';
+    validatePhone(inputPhoneForm);
 
-    btnForm.addEventListener('click', sendHandler);
-
-    validatePhone(modalInputPhone);
-    btnCloseModal.addEventListener('click', () => closePopup(form));
     document.addEventListener('keydown', (evt) => {
       if (isEscEvent(evt)) {
         evt.preventDefault();
-        closePopup(form);
+        closePopup(formTemplate);
       }
     }, {once: true});
   };
 
-  const showPopup = () => showMessage(formTemplate.cloneNode(true));
+  const showPopup = () => showFormCallback(formTemplate.cloneNode(true));
   btnCallback.addEventListener('click', showPopup);
+
   // = = = = = = = = = = = = = = = = = = = = = = = = = = = //
 
   // FOOTER ACCORDION
+
   const footerNavigation = document.querySelector('.footer__site-nav');
   const buttonsOpenMenu = footerNavigation.querySelectorAll('.footer__btn');
   const accordions = footerNavigation.querySelectorAll('.footer__accordion');
@@ -154,16 +149,13 @@
 
   // INPUT MASK FORM
 
-
-
   const feedbackBlock = document.querySelector('.feedback')
+  const phoneInputForm = feedbackBlock.querySelector('#phone-form-field');
 
-  if (feedbackBlock) {
-    // debugger
-    const phoneInputForm = feedbackBlock.querySelector('#phone-form-field');
-    validatePhone(phoneInputForm);
-  }
+  const validatePhone = function (element) {
+    const inputPhoneMask = new Inputmask('+7 (999) 999-99-99');
+    inputPhoneMask.mask(element);
+  };
 
+  validatePhone(phoneInputForm);
 })();
-
-
