@@ -147,11 +147,11 @@
           <p>Мы проконсультируем Вас бесплатно</p>
           <div class="feedback__form-fields">
             <label class="visually-hidden" for="name-field">Имя</label>
-            <input id="name-field" name="Имя" type="text" placeholder="Имя" required>
-            <label class="visually-hidden" for="tel-field">Телефон</label>
-            <input class="feedback__form-tel" data-inputmask="'mask': '+7 (999) 999-9999'" id="tel-field" name="Телефон" type="tel" placeholder="Телефон" required>
+            <input id="name-field" name="first-name" type="text" placeholder="Имя" required autocomplete="off">
+            <label class="visually-hidden" for="phone-form-field">Телефон</label>
+            <input class="feedback__form-tel" id="phone-form-field" name="phone" type="tel" placeholder="Телефон" required autocomplete="off">
             <label class="visually-hidden" for="question-field">Задайте Ваш вопрос</label>
-            <textarea id="question-field" placeholder="Ваш вопрос" required></textarea>
+            <textarea id="question-field" placeholder="Ваш вопрос" required autocomplete="off"></textarea>
           </div>
           <div class="feedback__form-control">
             <button class="button button--form" type="submit">Задать вопрос</button>
@@ -244,11 +244,11 @@
         <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
         <div class="modal__form-fields">
           <label class="visually-hidden" for="name-id">Имя</label>
-          <input id="name-id" name="Имя" type="text" placeholder="Имя" required>
+          <input id="name-id" name="modal-first-name" type="text" placeholder="Имя" required autocomplete="off">
           <label class="visually-hidden" for="tel-field">Телефон</label>
-          <input id="tel-id" name="Телефон" type="tel" placeholder="Телефон" required>
+          <input id="phone-modal-id" name="modal-phone" type="tel" placeholder="Телефон" required autocomplete="off">
           <label class="visually-hidden" for="question-id">Задайте Ваш вопрос</label>
-          <textarea id="question-id" placeholder="Ваш вопрос" required></textarea>
+          <textarea id="modal-question-id" placeholder="Ваш вопрос" required autocomplete="off"></textarea>
         </div>
         <div class="modal__form-control">
           <button class="button button--modal" type="submit">Отправить</button>
@@ -259,6 +259,8 @@
       </form>
     </section>
   </template>
+  <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
+  <div class="overlay overlay--hidden"></div>
 </body>
 </html>
