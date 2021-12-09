@@ -59,7 +59,7 @@
 
     btnFormSubmit.addEventListener('submit', function (evt) {
       if (!name.value || !phone.value || !message.value) {
-         evt.preventDefault()
+        evt.preventDefault();
       } else {
         if (isStorageSupport) {
           localStorage.setItem('name', name.value);
@@ -96,7 +96,7 @@
   buttonsOpenMenu.forEach(btn => btn.classList.remove('footer__btn--no-js'));
 
   for (let i = 0; i < buttonsOpenMenu.length; i++) {
-    buttonsOpenMenu[i].addEventListener('click', toggleItem, false)
+    buttonsOpenMenu[i].addEventListener('click', toggleItem, false);
   }
 
   const hideList = (list) => {
