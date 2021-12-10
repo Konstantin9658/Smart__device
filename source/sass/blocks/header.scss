@@ -1,10 +1,8 @@
 .header {
   flex: 0 0 auto;
   position: relative;
-  background: url("../img/header-bcg.png"), $bcg-gradient;
-  background-repeat: no-repeat;
+  background:  url("../img/header-bcg.png"), no-repeat, 50% 50%, $bcg-gradient;
   background-size: cover;
-  background-position: 50% 50%;
   min-height: 878px;
   z-index: 3;
   overflow: hidden;
@@ -127,11 +125,11 @@
       margin-right: 88px;
 
       @media (max-width: $tablet-width) {
-        margin-right: 33px;
+        margin-right: 30px;
       }
 
       @media (max-width: $mobile-width) {
-        margin-right: 23px;
+        margin-right: 20px;
       }
     }
 
@@ -150,18 +148,32 @@
 .header__contact-email,
 .header__contact-phone {
   color: $white;
+  display: inline-block;
+  vertical-align: super;
+
+  @media (max-width: $tablet-width) {
+    span {
+      display: none;
+    }
+  }
 
   svg {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: bottom;
+    margin-right: 7px;
+
+    @media (max-width: $tablet-width) {
+      margin-right: 0;
+    }
 
     @media (max-width: $mobile-width) {
-      vertical-align: super;
+      vertical-align: baseline;
     }
   }
 }
 
 .header__contact-email {
+  letter-spacing: -0.8px;
 
   svg {
     @media (max-width: $tablet-width) {
@@ -169,16 +181,10 @@
       height: 19px;
     }
   }
-
-  &::after {
-    content: "info@sd.ru";
-    display: inline-block;
-    vertical-align: super;
-    padding-left: 6px;
-  }
 }
 
 .header__contact-phone {
+  padding-left: 4px;
 
   svg {
     @media (max-width: $tablet-width) {
@@ -186,22 +192,7 @@
       height: 24px;
     }
   }
-
-  &::after {
-    content: "+7 (495) 000 52 52";
-    display: inline-block;
-    vertical-align: super;
-    padding-left: 5px;
-  }
 }
-
-.header__contact-phone::after,
-.header__contact-email::after {
-  @media (max-width: $tablet-width) {
-    content: none;
-  }
-}
-
 
 .header__content {
   padding-left: 74px;
@@ -336,8 +327,7 @@
 }
 
 .header__content-img {
-  background-image: url("../img/card-img.png");
-  background-repeat: no-repeat;
+  background: url("../img/card-img.png") no-repeat;
   background-size: cover;
   width: 705px;
   height: 515px;

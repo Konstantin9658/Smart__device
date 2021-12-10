@@ -19,6 +19,7 @@
     const btnFormClose = formTemplate.querySelector('.modal__btn');
     const inputPhoneForm = formTemplate.querySelector('[name="modal-phone"]');
     const btnFormSubmit = formTemplate.querySelector('.button--modal');
+    // const checkbox = formTemplate.querySelector('input[type=checkbox]');
 
     document.body.insertAdjacentElement('afterend', formTemplate);
     document.body.style.overflow = 'hidden';

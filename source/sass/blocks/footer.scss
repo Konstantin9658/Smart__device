@@ -41,6 +41,7 @@
 }
 
 .footer__accordion-close {
+
   @media (max-width: $mobile-width) {
     .footer__btn {
       &::after,
@@ -101,12 +102,8 @@
   }
 }
 
-
 .footer__btn {
-
-  @media (min-width: 768px) {
-    display: none;
-  }
+  display: none;
 
   @media (max-width: $mobile-width) {
     display: block;
@@ -365,15 +362,6 @@
     display: none;
   }
 }
-
-// .footer__list--no-js {
-//   @media (max-width: $mobile-width) {
-//     display: block;
-//     margin-top: 30px;
-//     padding-right: 30px;
-//     margin-bottom: 27px;
-//   }
-// }
 
 .footer__copyright {
   border-top: 1px solid rgba(98,105,98,0.2);
