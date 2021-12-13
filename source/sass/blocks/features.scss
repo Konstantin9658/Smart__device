@@ -223,7 +223,8 @@
   }
 
   &:hover,
-  &:focus-visible {
+  &:focus-visible,
+  &:focus-within {
     transition: $trans--300;
     background-color: $main-cyan;
 

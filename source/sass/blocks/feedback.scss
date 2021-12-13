@@ -125,6 +125,13 @@
     &::placeholder {
       color: $white;
     }
+
+    &:hover,
+    &:focus-visible,
+    &:focus-within {
+      transition: $trans--300;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
   }
 
   input {
@@ -187,7 +194,8 @@
     }
 
     &:hover,
-    &:focus-visible {
+    &:focus-visible,
+    &:focus-within {
       text-decoration: underline;
     }
   }
