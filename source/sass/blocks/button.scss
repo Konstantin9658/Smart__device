@@ -16,6 +16,7 @@
     width: 180px;
     border: 1px solid $white;
     margin: auto;
+    margin-right: 0;
 
     @media (max-width: $tablet-width) {
       display: none;
@@ -25,46 +26,6 @@
     &:focus-visible {
       color: $main-cyan;
       border-color: $main-cyan;
-    }
-  }
-
-  &--consultation {
-    @include resize-txt(14px, 19px);
-    width: 407px;
-    min-height: 55px;
-    border-radius: $btn-radius;
-    background-color: $main-cyan;
-    color: $white;
-    margin-left: 98px;
-    margin-top: 21px;
-    margin-bottom: 40px;
-    letter-spacing: 0.13em;
-
-    @media (max-width: $tablet-width) {
-      width: 379px;
-      margin-left: 51px;
-      margin-top: 36px;
-    }
-
-    @media (max-width: $mobile-width) {
-      width: 100%;
-      margin-top: 22px;
-      margin-left: 0;
-    }
-
-    &::before {
-      content: "Получить бесплатную консультацию";
-
-      @media (max-width: $mobile-width) {
-        content: "Бесплатная консультация";
-      }
-    }
-
-    &:hover,
-    &:focus-visible {
-      background-color: transparent;
-      border: 1px solid $main-cyan;
-      color: $main-cyan;
     }
   }
 

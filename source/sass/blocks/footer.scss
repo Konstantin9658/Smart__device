@@ -27,7 +27,6 @@
   a {
     @include font($ptmono, 15px, 25px, 400, normal);
     color: $very-dark-blue;
-    opacity: 0.5;
 
     &:hover,
     &:focus-visible {
@@ -187,7 +186,7 @@
 .footer__inner {
   flex-grow: 1;
   margin-right: 30px;
-  flex-shrink: 1;
+  flex-shrink: 0;
 
   @media (max-width: $tablet-width) {
     display: flex;
@@ -226,7 +225,7 @@
 .footer__logo {
   display: flex;
   flex: 1 0 auto;
-  margin-bottom: 48px;
+  margin-bottom: 41px;
 
   @media (max-width: $tablet-width) {
     margin-bottom: 0;
@@ -234,19 +233,6 @@
 
   @media (max-width: $mobile-width) {
     flex-grow: 0;
-  }
-}
-
-.footer__slogan {
-  @include font($robotocondensed, 25px, 29px, 700, normal);
-  color: #203c42;
-  margin: 0;
-  padding-left: 16px;
-  align-self: center;
-
-  span {
-    @include font($roboto, 12px, 14px, 500, normal);
-    display: block;
   }
 }
 
@@ -328,6 +314,7 @@
   width: 91%;
   column-count: 2;
   column-width: 150px;
+  opacity: 0.5;
 
   @media (max-width: $tablet-width) {
     column-count: 1;
@@ -357,6 +344,7 @@
 
 .footer__contact-list {
   @include reset-list;
+  opacity: 0.5;
 
   @media (max-width: $mobile-width) {
     display: none;

@@ -34,6 +34,7 @@
 
 .services__wrapper {
   display: flex;
+  flex-wrap: wrap;
 
   @media (max-width: $tablet-width) {
     width: 720px;
@@ -42,26 +43,30 @@
   }
 
   @media (max-width: $mobile-width) {
-    width: 290px;
+    width: 100%;
   }
 }
 
 .services__card-link {
-  width: 370px;
+  width: 304px;
+  min-width: 304px;
+  max-width: 370px;
   min-height: 620px;
   position: relative;
   margin-bottom: 27px;
+  flex-grow: 1;
 
   @media (max-width: $tablet-width) {
+    max-width: 100%;
     width: 720px;
     min-height: 256px;
   }
 
   @media (max-width: $mobile-width) {
-    width: 290px;
+    width: 100%;
   }
 
-  &:not(:last-child) {
+  &:not(:nth-child(3n + 3)) {
     margin-right: 30px;
 
     @media (max-width: $tablet-width) {
@@ -90,49 +95,53 @@
   }
 
   &--production {
-    background: url("../img/block-services/production-service-img.png"), no-repeat, center;
+    background: url("../img/block-services/production-service-img.png") no-repeat center;
 
     @include retina {
-      background: url("../img/block-services/production-service-img@2x.png"), no-repeat, center;
+      background: url("../img/block-services/production-service-img@2x.png") no-repeat center;
     }
 
     @media (max-width: $tablet-width) {
-      background: url("../img/block-services/production-service-img-tablet.png"), no-repeat, center;
+      background: url("../img/block-services/production-service-img-tablet.png") no-repeat center;
 
       @include retina {
-        background: url("../img/block-services/production-service-img-tablet@2x.png"), no-repeat, center;
+        background: url("../img/block-services/production-service-img-tablet@2x.png") no-repeat center;
       }
     }
 
     @media (max-width: $mobile-width) {
-      background: url("../img/block-services/production-service-img-mobile.png"), no-repeat, center;
+      background: url("../img/block-services/production-service-img-mobile.png") no-repeat center;
+      background-size: cover;
 
       @include retina {
-        background: url("../img/block-services/production-service-img-mobile@2x.png"), no-repeat, center;
+        background: url("../img/block-services/production-service-img-mobile@2x.png") no-repeat center;
+        background-size: cover;
       }
     }
   }
 
   &--installation {
-    background: url("../img/block-services/installation-service-img.png"), no-repeat, center;
+    background: url("../img/block-services/installation-service-img.png") no-repeat center;
 
     @include retina {
-      background: url("../img/block-services/installation-service-img@2x.png"), no-repeat, center;
+      background: url("../img/block-services/installation-service-img@2x.png") no-repeat center;
     }
 
     @media (max-width: $tablet-width) {
-      background: url("../img/block-services/installation-service-img-tablet.png"), no-repeat, center;
+      background: url("../img/block-services/installation-service-img-tablet.png") no-repeat center;
 
       @include retina {
-        background: url("../img/block-services/installation-service-img-tablet@2x.png"), no-repeat, center;
+        background: url("../img/block-services/installation-service-img-tablet@2x.png") no-repeat center;
       }
     }
 
     @media (max-width: $mobile-width) {
-      background: url("../img/block-services/installation-service-img-mobile.png"), no-repeat, center;
+      background: url("../img/block-services/installation-service-img-mobile.png") no-repeat center;
+      background-size: cover;
 
       @include retina {
-        background: url("../img/block-services/installation-service-img-mobile@2x.png"), no-repeat, center;
+        background: url("../img/block-services/installation-service-img-mobile@2x.png") no-repeat center;
+        background-size: cover;
       }
     }
   }
@@ -150,25 +159,27 @@
         padding-bottom: 48px;
       }
     }
-    background: url("../img/block-services/lighting-equipment-img.png"), no-repeat, center;
+    background: url("../img/block-services/lighting-equipment-img.png") no-repeat center;
 
     @include retina {
-      background: url("../img/block-services/lighting-equipment-img@2x.png"), no-repeat, center;
+      background: url("../img/block-services/lighting-equipment-img@2x.png") no-repeat center;
     }
 
     @media (max-width: $tablet-width) {
-      background: url("../img/block-services/lighting-equipment-img-tablet.png"), no-repeat, center;
+      background: url("../img/block-services/lighting-equipment-img-tablet.png") no-repeat center;
 
       @include retina {
-        background: url("../img/block-services/lighting-equipment-img-tablet@2x.png"), no-repeat, center;
+        background: url("../img/block-services/lighting-equipment-img-tablet@2x.png") no-repeat center;
       }
     }
 
     @media (max-width: $mobile-width) {
-      background: url("../img/block-services/lighting-equipment-img-mobile.png"), no-repeat, center;
+      background: url("../img/block-services/lighting-equipment-img-mobile.png") no-repeat center;
+      background-size: cover;
 
       @include retina {
-        background: url("../img/block-services/lighting-equipment-img-mobile@2x.png"), no-repeat, center;
+        background: url("../img/block-services/lighting-equipment-img-mobile@2x.png") no-repeat center;
+        background-size: cover;
       }
     }
   }
@@ -210,7 +221,7 @@
   }
 
   @media (max-width: $mobile-width) {
-    left: 227px;
+    left: calc(100% - 63px);
     top: 52px;
   }
 
