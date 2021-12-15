@@ -76,6 +76,7 @@
 }
 
 .header__logo {
+  pointer-events: none;
 
   svg {
     @media (max-width: $mobile-width) {
