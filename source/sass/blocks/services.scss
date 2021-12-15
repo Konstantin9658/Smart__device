@@ -33,50 +33,39 @@
 }
 
 .services__wrapper {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 27px;
 
   @media (max-width: $tablet-width) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 46px;
     width: 720px;
-    margin: 0 auto;
     flex-direction: column;
   }
 
   @media (max-width: $mobile-width) {
     width: 100%;
+    row-gap: 30px;
   }
 }
 
 .services__card-link {
-  width: 304px;
-  min-width: 304px;
   max-width: 370px;
   min-height: 620px;
   position: relative;
-  margin-bottom: 27px;
-  flex-grow: 1;
 
   @media (max-width: $tablet-width) {
     max-width: 100%;
     width: 720px;
+    margin: 0 auto;
     min-height: 256px;
   }
 
   @media (max-width: $mobile-width) {
     width: 100%;
-  }
-
-  &:not(:nth-child(3n + 3)) {
-    margin-right: 30px;
-
-    @media (max-width: $tablet-width) {
-      margin-right: 0;
-      margin-bottom: 46px;
-    }
-
-    @media (max-width: $mobile-width) {
-      margin-bottom: 30px;
-    }
   }
 
   p {
