@@ -104,6 +104,10 @@
   flex-grow: 1;
   justify-content: flex-end;
 
+  @media (min-width: $desktop-width) {
+    max-width: 985px;
+  }
+
   @media (max-width: $tablet-width) {
     margin-right: 0;
   }
